@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import Banner from "../components/Banner/Banner";
 import ProductFeed from "../components/ProductFeed/ProductFeed";
 
@@ -6,7 +7,7 @@ export default function Home({ products }) {
 	return (
 		<div className="bg-gray-100">
 			<Head>
-				<title>Amazon 2.0</title>
+				<title>Amazon Clone</title>
 			</Head>
 
 			{/* Banner */}
@@ -20,7 +21,7 @@ export default function Home({ products }) {
 	);
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const response = await fetch("https://fakestoreapi.com/products");
 	const products = await response.json();
 
