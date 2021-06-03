@@ -23,6 +23,10 @@ function Header() {
 		router.push("/checkout");
 	};
 
+	const handleOrdersClick = () => {
+		session && router.push("/orders");
+	};
+
 	return (
 		<header className="sticky">
 			{/* Top Nav */}
@@ -56,7 +60,7 @@ function Header() {
 						</p>
 						<p className="font-extrabold md:text-sm">Account & Lists</p>
 					</div>
-					<div className="link">
+					<div onClick={handleOrdersClick} className="link">
 						<p className="font-extrabold md:text-sm">Returns</p>
 						<p className="font-extrabold md:text-sm">& Orders</p>
 					</div>
